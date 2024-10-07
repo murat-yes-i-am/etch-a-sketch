@@ -14,13 +14,24 @@ const createGrid = (side, parentElement) => {
   }
 }
 
-const changeGrid = (side) => {
+const changeGrid = () => {
+  const side = parseInt(prompt('Enter the number of squares per side'));
+
+  if (isNaN(side) || side < 1) {
+    const message = 'Invalid side is entered';
+
+    console.error(message);
+    alert(message)
+
+    return;
+  }
+  
   containerElement.remove();
 
   containerElement = document.createElement('div');
   containerElement.classList.add('container');
+  createGrid(side, containerElement);
 
-  // const firstChild = document.firstChild;
   document.body.prepend(containerElement);
 }
 
