@@ -2,6 +2,7 @@ const ROOT = ':root';
 const CONTAINER = '.container';
 const CHANGE_GRID_BUTTON = '.button.change-grid';
 const DEFAULT_GRID_SIDE = 16;
+const DEFAULT_SQUARE_COLOR = 'rgb(243, 243, 179)';
 
 const root = document.querySelector(ROOT);
 const changeGridButton = document.querySelector(CHANGE_GRID_BUTTON);
@@ -24,13 +25,12 @@ const getRandomColor = () => {
 const changeColor = (e) => {
   const {target} = e;
 
-
   if (e.metaKey && !e.shiftKey) {
     target.style.backgroundColor = getRandomColor();
   }
 
   if (e.metaKey && e.shiftKey) {
-    target.style.backgroundColor = 'yellow';
+    target.style.backgroundColor = DEFAULT_SQUARE_COLOR;
   }
 
   if (e.ctrlKey && !e.shiftKey) {

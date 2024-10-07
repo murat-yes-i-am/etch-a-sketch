@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(169, 107, 15);
+}
+
 h1 {
   margin: 20px;
   text-align: center;
@@ -33,7 +37,7 @@ h1 {
 }
 
 .square {
-  background-color: yellow;
+  background-color: rgb(243, 243, 179);
   border: 1px solid black;
   width: var(--square-side);
   height: var(--square-side);
