@@ -18,10 +18,6 @@ const getRandomColor = () => {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-/**
- * 
- * @param {Event} e 
- */
 const changeColor = (e) => {
   const {target} = e;
 
