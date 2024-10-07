@@ -1,3 +1,7 @@
+:root {
+  square-side: calc(100vw / 16);
+}
+
 * {
   margin: 0;
   padding: 0;
