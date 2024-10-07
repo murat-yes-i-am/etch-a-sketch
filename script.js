@@ -47,7 +47,7 @@ const createGrid = (side, parentElement) => {
 const changeGrid = () => {
   const side = parseInt(prompt('Enter the number of squares per side'));
 
-  if (isNaN(side) || side < 1) {
+  if (isNaN(side) || side < 1 || side > 100) {
     const message = 'Invalid side is entered';
 
     console.error(message);
