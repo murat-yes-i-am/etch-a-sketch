@@ -1,10 +1,21 @@
+const ROOT = ':root';
 const CONTAINER = '.container';
 const CHANGE_GRID_BUTTON = '.button.change-grid';
 const DEFAULT_GRID_SIDE = 16;
 
-const root = document.querySelector(':root');
+const root = document.querySelector(ROOT);
 const changeGridButton = document.querySelector(CHANGE_GRID_BUTTON);
 let containerElement = document.querySelector(CONTAINER);
+
+const getRandomNumber = (min = 0, max = 255) => Math.floor(min + Math.random() * (max - min + 1));
+
+const getRandomColor = () => {
+  const red = getRandomNumber();
+  const green = getRandomNumber();
+  const blue = getRandomNumber();
+
+  return `rgb(${red}, ${green}, ${blue})`;
+}
 
 /**
  * 
@@ -55,17 +66,5 @@ const changeGrid = () => {
 }
 
 createGrid(DEFAULT_GRID_SIDE, containerElement);
-
-const getRandomNumber = (min = 0, max = 255) => Math.floor(min + Math.random() * (max - min + 1));
-
-const getRandomColor = () => {
-  const red = getRandomNumber();
-  const green = getRandomNumber();
-  const blue = getRandomNumber();
-
-  return `rgb(${red}, ${green}, ${blue})`;
-}
-
-
 
 changeGridButton.addEventListener('click', changeGrid);
