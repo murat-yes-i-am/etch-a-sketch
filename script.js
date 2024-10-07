@@ -1,6 +1,8 @@
 const CONTAINER = '.container';
+const CHANGE_GRID_BUTTON = '.button.change-grid';
 const DEFAULT_GRID_SIDE = 16;
 
+const changeGridButton = document.querySelector(CHANGE_GRID_BUTTON);
 let containerElement = document.querySelector(CONTAINER);
 
 const createGrid = (side, parentElement) => {
@@ -60,3 +62,4 @@ const changeColor = (e) => {
 }
 
 containerElement.addEventListener('mouseover', changeColor);
+changeGridButton.addEventListener('click', changeGrid);
