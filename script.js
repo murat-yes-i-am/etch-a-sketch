@@ -10,12 +10,24 @@ for (let i = 0; i < GRID_SIZE; i++) {
   containerElement.append(squareDiv);
 }
 
+const getRandomNumber = (min = 0, max = 255) => Math.floor(min + Math.random() * (max - min + 1));
+
+const getRandomColor = () => {
+  const red = getRandomNumber();
+  const green = getRandomNumber();
+  const blue = getRandomNumber();
+
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
 /**
  * 
  * @param {Event} e 
  */
 const changeColor = (e) => {
   const {target} = e;
+
+  // target.style.backgroundColor = getRandomColor();
 
   target.style.opacity = target.style.opacity - 0.1;
 }
