@@ -1,5 +1,5 @@
 :root {
-  --square-side: calc(100% / 16) ;
+  --square-side: calc(100% / 16);
   --less: min(80vh, 90vw);
 }
 
@@ -28,7 +28,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   background-color: black;
 }
 
