@@ -30,11 +30,11 @@ const changeColor = (e) => {
     target.style.backgroundColor = defaultSquareColor;
   }
 
-  if (e.ctrlKey && !e.shiftKey) {
+  if (e.altKey && !e.shiftKey) {
     target.style.opacity = target.style.opacity - 0.1;
   }
 
-  if (e.ctrlKey && e.shiftKey) {
+  if (e.altKey && e.shiftKey) {
     target.style.opacity = +target.style.opacity + 0.1;
   }
 }
@@ -52,6 +52,7 @@ const createGrid = (side, parentElement) => {
   }
 
   parentElement.addEventListener('mouseover', changeColor);
+  parentElement.addEventListener('click', changeColor);
 }
 
 const changeGrid = () => {
