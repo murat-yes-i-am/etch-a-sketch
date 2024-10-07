@@ -3,7 +3,7 @@
   --less: min(80vh, 90vw);
   --main-color: rgb(169, 107, 15);
   --secondary-color: rgb(243, 243, 179);
-  --secondary-color-hover: rgb(243, 243, 179);
+  --secondary-color-hover: rgb(136, 85, 10);
 }
 
 * {
