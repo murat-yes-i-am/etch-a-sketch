@@ -5,6 +5,18 @@ const DEFAULT_GRID_SIDE = 16;
 const changeGridButton = document.querySelector(CHANGE_GRID_BUTTON);
 let containerElement = document.querySelector(CONTAINER);
 
+/**
+ * 
+ * @param {Event} e 
+ */
+const changeColor = (e) => {
+  const {target} = e;
+
+  // target.style.backgroundColor = getRandomColor();
+
+  target.style.opacity = target.style.opacity - 0.1;
+}
+
 const createGrid = (side, parentElement) => {
   const size = side ** 2;
 
@@ -14,6 +26,8 @@ const createGrid = (side, parentElement) => {
     element.style.opacity = 1;
     parentElement.append(element);
   }
+
+  parentElement.addEventListener('mouseover', changeColor);
 }
 
 const changeGrid = () => {
@@ -49,17 +63,6 @@ const getRandomColor = () => {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-/**
- * 
- * @param {Event} e 
- */
-const changeColor = (e) => {
-  const {target} = e;
 
-  // target.style.backgroundColor = getRandomColor();
 
-  target.style.opacity = target.style.opacity - 0.1;
-}
-
-containerElement.addEventListener('mouseover', changeColor);
 changeGridButton.addEventListener('click', changeGrid);
