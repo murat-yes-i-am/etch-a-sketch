@@ -2,6 +2,7 @@ const CONTAINER = '.container';
 const CHANGE_GRID_BUTTON = '.button.change-grid';
 const DEFAULT_GRID_SIDE = 16;
 
+const root = document.querySelector(':root');
 const changeGridButton = document.querySelector(CHANGE_GRID_BUTTON);
 let containerElement = document.querySelector(CONTAINER);
 
@@ -19,6 +20,8 @@ const changeColor = (e) => {
 
 const createGrid = (side, parentElement) => {
   const size = side ** 2;
+
+  root.style.setProperty('--square-side', `calc(100% / ${side})`);
 
   for (let i = 0; i < size; i++) {
     const element = document.createElement('div');
