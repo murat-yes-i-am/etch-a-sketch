@@ -34,7 +34,7 @@ const changeGrid = () => {
   containerElement.classList.add('container');
   createGrid(side, containerElement);
 
-  document.body.prepend(containerElement);
+  document.body.append(containerElement);
 }
 
 createGrid(DEFAULT_GRID_SIDE, containerElement);
