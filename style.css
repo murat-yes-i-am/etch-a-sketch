@@ -10,6 +10,7 @@
 }
 
 .container {
+  margin: 20px auto;
   width: var(--less);
   height: var(--less);
   display: flex;
