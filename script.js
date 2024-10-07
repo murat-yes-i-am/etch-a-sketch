@@ -1,14 +1,20 @@
 const CONTAINER = '.container';
-const GRID_SIZE = 16 * 16;
+const DEFAULT_GRID_SIDE = 16;
 
 const containerElement = document.querySelector(CONTAINER);
 
-for (let i = 0; i < GRID_SIZE; i++) {
-  const squareDiv = document.createElement('div');
-  squareDiv.classList.add('square');
-  squareDiv.style.opacity = 1;
-  containerElement.append(squareDiv);
+const createGrid = (side, parentElement) => {
+  const size = side ** 2;
+
+  for (let i = 0; i < size; i++) {
+    const element = document.createElement('div');
+    element.classList.add('square');
+    element.style.opacity = 1;
+    parentElement.append(element);
+  }
 }
+
+createGrid(DEFAULT_GRID_SIDE, containerElement);
 
 const getRandomNumber = (min = 0, max = 255) => Math.floor(min + Math.random() * (max - min + 1));
 
