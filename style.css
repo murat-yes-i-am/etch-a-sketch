@@ -1,5 +1,6 @@
 :root {
-  --square-side: calc(100vw / 16);
+  --square-side: calc(100% / 16) ;
+  --less: min(80vh, 90vw);
 }
 
 * {
@@ -9,11 +10,12 @@
 }
 
 .container {
+  width: var(--less);
+  height: var(--less);
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 .square {
