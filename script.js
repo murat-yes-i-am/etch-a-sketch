@@ -24,9 +24,22 @@ const getRandomColor = () => {
 const changeColor = (e) => {
   const {target} = e;
 
-  // target.style.backgroundColor = getRandomColor();
 
-  target.style.opacity = target.style.opacity - 0.1;
+  if (e.metaKey && !e.shiftKey) {
+    target.style.backgroundColor = getRandomColor();
+  }
+
+  if (e.metaKey && e.shiftKey) {
+    target.style.backgroundColor = 'yellow';
+  }
+
+  if (e.ctrlKey && !e.shiftKey) {
+    target.style.opacity = target.style.opacity - 0.1;
+  }
+
+  if (e.ctrlKey && e.shiftKey) {
+    target.style.opacity = +target.style.opacity + 0.1;
+  }
 }
 
 const createGrid = (side, parentElement) => {
