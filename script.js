@@ -2,9 +2,10 @@ const ROOT = ':root';
 const CONTAINER = '.container';
 const CHANGE_GRID_BUTTON = '.button.change-grid';
 const DEFAULT_GRID_SIDE = 16;
-const DEFAULT_SQUARE_COLOR = 'rgb(243, 243, 179)';
 
 const root = document.querySelector(ROOT);
+const defaultSquareColor = root.style.getPropertyValue('--secondary-color');
+
 const changeGridButton = document.querySelector(CHANGE_GRID_BUTTON);
 let containerElement = document.querySelector(CONTAINER);
 
@@ -26,7 +27,7 @@ const changeColor = (e) => {
   }
 
   if (e.metaKey && e.shiftKey) {
-    target.style.backgroundColor = DEFAULT_SQUARE_COLOR;
+    target.style.backgroundColor = defaultSquareColor;
   }
 
   if (e.ctrlKey && !e.shiftKey) {
