@@ -1,7 +1,7 @@
 const CONTAINER = '.container';
 const DEFAULT_GRID_SIDE = 16;
 
-const containerElement = document.querySelector(CONTAINER);
+let containerElement = document.querySelector(CONTAINER);
 
 const createGrid = (side, parentElement) => {
   const size = side ** 2;
@@ -12,6 +12,16 @@ const createGrid = (side, parentElement) => {
     element.style.opacity = 1;
     parentElement.append(element);
   }
+}
+
+const changeGrid = (side) => {
+  containerElement.remove();
+
+  containerElement = document.createElement('div');
+  containerElement.classList.add('container');
+
+  // const firstChild = document.firstChild;
+  document.body.prepend(containerElement);
 }
 
 createGrid(DEFAULT_GRID_SIDE, containerElement);
