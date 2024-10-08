@@ -24,6 +24,7 @@ h1 {
 
 .instruction {
   width: 75%;
+  max-width: 600px;
   border: 2px solid var(--secondary-color);
   border-radius: 20px;
   margin: 20px auto;
